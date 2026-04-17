@@ -1,36 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script>
-(function() {
-  var ua = navigator.userAgent || '';
-  var isMetaBrowser = /Instagram|FBAN|FBAV|FB_IAB|FBIOS|FBANDROID/i.test(ua);
-  if (isMetaBrowser) {
-    document.write(
-      '<div style="background:#111827;border-radius:12px;border-top:4px solid #b08d57;padding:28px 24px;max-width:420px;margin:0 auto 24px;text-align:center;font-family:Arial,sans-serif;">' +
-      '<div style="font-size:24px;margin-bottom:14px;">&#128241;</div>' +
-      '<div style="font-size:16px;font-weight:900;text-transform:uppercase;letter-spacing:1.5px;color:#ffffff;margin-bottom:10px;">Open in Your Browser</div>' +
-      '<div style="font-size:13px;color:rgba(255,255,255,0.6);line-height:1.7;margin-bottom:20px;">Our AI estimate tool requires your default browser to work properly.</div>' +
-      '<div style="background:#1f2937;border-radius:10px;padding:16px;text-align:left;">' +
-      '<div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:12px;padding-bottom:12px;border-bottom:1px solid rgba(255,255,255,0.08);">' +
-      '<div style="background:#b08d57;color:white;font-size:11px;font-weight:900;min-width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-top:1px;">1</div>' +
-      '<div style="font-size:13px;color:rgba(255,255,255,0.8);line-height:1.5;">Tap the <strong style="color:#b08d57;">&#8942;</strong> menu icon in the top right corner of your screen</div>' +
-      '</div>' +
-      '<div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:12px;padding-bottom:12px;border-bottom:1px solid rgba(255,255,255,0.08);">' +
-      '<div style="background:#b08d57;color:white;font-size:11px;font-weight:900;min-width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-top:1px;">2</div>' +
-      '<div style="font-size:13px;color:rgba(255,255,255,0.8);line-height:1.5;">Select <strong style="color:#b08d57;">"Open in Browser"</strong> from the menu</div>' +
-      '</div>' +
-      '<div style="display:flex;align-items:flex-start;gap:12px;">' +
-      '<div style="background:#b08d57;color:white;font-size:11px;font-weight:900;min-width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-top:1px;">3</div>' +
-      '<div style="font-size:13px;color:rgba(255,255,255,0.8);line-height:1.5;">Your estimate tool will open and work perfectly</div>' +
-      '</div>' +
-      '</div>' +
-      '<div style="margin-top:16px;font-size:11px;color:rgba(255,255,255,0.3);letter-spacing:1px;text-transform:uppercase;">A3 Garage &middot; Phoenix &middot; Scottsdale &middot; Paradise Valley</div>' +
-      '</div>'
-    );
-  }
-})();
-</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>A3 Garage — Get Your Instant Estimate</title>
@@ -61,23 +31,6 @@
       color: #2f2c39;
       min-height: 100vh;
     }
-
-    /* OPEN IN BROWSER BANNER */
-    .browser-banner {
-      display: none;
-      background: #b08d57;
-      color: white;
-      padding: 12px 20px;
-      text-align: center;
-      font-size: 13px;
-      font-weight: 700;
-      line-height: 1.5;
-    }
-    .browser-banner a {
-      color: white;
-      text-decoration: underline;
-    }
-
     .header {
       background: #111827;
       border-bottom: 3px solid #b08d57;
@@ -357,20 +310,35 @@
 </head>
 <body>
 
-  <!-- SAFE BROWSER BANNER — shows a tap prompt instead of forcing redirect -->
-  <div class="browser-banner" id="browserBanner">
-    For the best experience, tap the menu (&#8942;) and select <strong>"Open in Browser"</strong>
-  </div>
-
   <script>
-    // Safely detect Meta browser and show banner — no forced redirect
-    (function() {
-      var ua = navigator.userAgent || '';
-      var isMetaBrowser = /Instagram|FBAN|FBAV|FB_IAB|FBIOS|FBANDROID/i.test(ua);
-      if (isMetaBrowser) {
-        document.getElementById('browserBanner').style.display = 'block';
-      }
-    })();
+  (function() {
+    var ua = navigator.userAgent || '';
+    var isMetaBrowser = /Instagram|FBAN|FBAV|FB_IAB|FBIOS|FBANDROID/i.test(ua);
+    if (isMetaBrowser) {
+      document.write(
+        '<div style="background:#111827;border-radius:12px;border-top:4px solid #b08d57;padding:28px 24px;max-width:420px;margin:16px auto 24px;text-align:center;font-family:Arial,sans-serif;">' +
+        '<div style="font-size:24px;margin-bottom:14px;">&#128241;</div>' +
+        '<div style="font-size:16px;font-weight:900;text-transform:uppercase;letter-spacing:1.5px;color:#ffffff;margin-bottom:10px;">Open in Your Browser</div>' +
+        '<div style="font-size:13px;color:rgba(255,255,255,0.6);line-height:1.7;margin-bottom:20px;">Our AI estimate tool requires your default browser to work properly.</div>' +
+        '<div style="background:#1f2937;border-radius:10px;padding:16px;text-align:left;">' +
+        '<div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:12px;padding-bottom:12px;border-bottom:1px solid rgba(255,255,255,0.08);">' +
+        '<div style="background:#b08d57;color:white;font-size:11px;font-weight:900;min-width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-top:1px;">1</div>' +
+        '<div style="font-size:13px;color:rgba(255,255,255,0.8);line-height:1.5;">Tap the <strong style="color:#b08d57;">&#8942;</strong> menu icon in the top right corner of your screen</div>' +
+        '</div>' +
+        '<div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:12px;padding-bottom:12px;border-bottom:1px solid rgba(255,255,255,0.08);">' +
+        '<div style="background:#b08d57;color:white;font-size:11px;font-weight:900;min-width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-top:1px;">2</div>' +
+        '<div style="font-size:13px;color:rgba(255,255,255,0.8);line-height:1.5;">Select <strong style="color:#b08d57;">&ldquo;Open in Browser&rdquo;</strong> from the menu</div>' +
+        '</div>' +
+        '<div style="display:flex;align-items:flex-start;gap:12px;">' +
+        '<div style="background:#b08d57;color:white;font-size:11px;font-weight:900;min-width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-top:1px;">3</div>' +
+        '<div style="font-size:13px;color:rgba(255,255,255,0.8);line-height:1.5;">Your estimate tool will open and work perfectly</div>' +
+        '</div>' +
+        '</div>' +
+        '<div style="margin-top:16px;font-size:11px;color:rgba(255,255,255,0.3);letter-spacing:1px;text-transform:uppercase;">A3 Garage &middot; Phoenix &middot; Scottsdale &middot; Paradise Valley</div>' +
+        '</div>'
+      );
+    }
+  })();
   </script>
 
   <div class="header">
@@ -405,14 +373,12 @@
 
   <div style="padding:0 16px 0;background:#111827;">
     <div class="main-card">
-
       <div class="services">
         <div class="service-item"><span class="service-arrow">→</span>Full sort &amp; cleanout</div>
         <div class="service-item"><span class="service-arrow">→</span>Deep clean</div>
         <div class="service-item"><span class="service-arrow">→</span>Professional organizing</div>
         <div class="service-item"><span class="service-arrow">→</span>Done in one day</div>
       </div>
-
       <div class="how-label">How it works</div>
       <div class="steps">
         <div class="step">
@@ -428,7 +394,6 @@
           <div class="step-text">Book your reset</div>
         </div>
       </div>
-
       <div class="cta-section">
         <a href="https://www.a3garageco.com/request-a-quote" class="cta-btn">
           📸 Get Your Instant Estimate
@@ -438,7 +403,6 @@
           <strong>Serving Phoenix, Scottsdale &amp; Paradise Valley</strong>
         </div>
       </div>
-
     </div>
   </div>
 
